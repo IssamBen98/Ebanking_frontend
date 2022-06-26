@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {catchError, map, Observable, throwError} from "rxjs";
 import {CustomerService} from "../services/customer.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {Customer} from "../Model/customer.model";
 
 
 @Component({
@@ -11,7 +12,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
   styleUrls: ['./customers.component.css']
 })
 export class CustomersComponent implements OnInit {
-  customers! : Observable<any>;
+  customers! : Observable<Array<Customer>>;
   errorMessage: string | undefined;
   searchFormGroup :FormGroup |undefined;
   Loading: any;
